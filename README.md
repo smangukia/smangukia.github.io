@@ -13,8 +13,9 @@ My interests include Artificial Intelligence and Cognitive Science.
 
 ## Hobbies
 
-I love drawing, swimming and Netflixing :stuck_out_tongue_winking_eye:
-In my free time, I am learning programming and wish to become a Python pro :snake:
+I love drawing, swimming and Netflixing.
+
+In my free time, I am learning programming and wish to become a Python pro.
 
 ## Contact
 
