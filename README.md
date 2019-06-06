@@ -1,5 +1,3 @@
-# smangukia.github.io
-
 I am looking forward to pursue my UG in Computer Engineering.
 
 ## Skills & Interests
