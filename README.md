@@ -1,4 +1,4 @@
-I am looking forward to pursue my UG in Computer Engineering.
+I am pursuing my UG in Information and Technology.
 
 ## Skills & Interests
 
@@ -6,6 +6,7 @@ I am looking forward to pursue my UG in Computer Engineering.
 - HTML
 - CSS
 - JavaScript
+- Python
 
 My interests include Artificial Intelligence and Cognitive Science.
 
