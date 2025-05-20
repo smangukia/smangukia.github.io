@@ -32,6 +32,12 @@ jobs:
 
       - name: Build project
         run: npm run build
+        
+      - name: Create .nojekyll file
+        run: touch out/.nojekyll
+        
+      - name: Debug output directory
+        run: ls -la out/
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
