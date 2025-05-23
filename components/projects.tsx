@@ -57,6 +57,17 @@ export default function Projects() {
     },
     {
       id: 4,
+      title: "Mortality Rate Analysis – ML & Time Series Insights",
+      description:
+        "A comprehensive data science project featuring advanced ML algorithms and interactive visualizations for analyzing global mortality patterns and detecting anomalies.",
+      image: "/mortalityrateanalysis.png",
+      tags: ["Python", "Streamlit", "Scikit-learn", "TensorFlow", "SARIMA", "Plotly", "Jupyter Notebook", "LSTM"],
+      github: "https://github.com/smangukia/Mortality-Rate-Analysis",
+      details:
+        "A comprehensive data science project that combines statistical analysis, machine learning, and time series forecasting to identify unusual mortality patterns across different countries and time periods. The system implements multiple anomaly detection algorithms and provides an interactive Streamlit dashboard for real-time analysis.\n\nI built an anomaly detection system using Isolation Forest, One-Class SVM, LSTM Autoencoders, and SARIMA to flag unusual mortality trends across global datasets from the Human Mortality Database (HMD). The project features an ensemble method combining ML and statistical models (Z-Score, IQR, Moving Average), achieving an F1-score of 81.25% via adaptive thresholding.\n\nKey technical achievements include forecasting mortality baselines using SARIMA and LSTM models, enabling excess death estimation with confidence intervals around key global events. I developed an interactive Streamlit dashboard with dynamic Plotly visualizations for anomaly detection, event analysis, and sensitivity exploration across 13 countries over 30+ years of data.\n\nThe dashboard includes five main sections: Data Exploration with interactive filtering, Anomaly Detection with real-time parameter adjustment, Historical Correlation linking mortality anomalies to events like pandemics and conflicts, Excess Mortality calculation with statistical significance testing, and comprehensive visualization tools. The project demonstrates the complete data science workflow from research in Jupyter notebooks to deploying an interactive web application.",
+    },
+    {
+      id: 5,
       title: "Raspberry Pi NAS Server – Self-Hosted Storage Solution",
       description:
         "A professional-grade Network Attached Storage server built with Raspberry Pi 5, featuring ZFS, Docker, and Kubernetes capabilities.",
@@ -66,7 +77,7 @@ export default function Projects() {
         "I built a robust, enterprise-grade Network Attached Storage (NAS) server solution using the Raspberry Pi 5, demonstrating how powerful, cost-effective server systems can be built with modern SBC technology.\n\nThe hardware implementation combines the Raspberry Pi 5's computing power with a Radxa Penta SATA HAT, allowing connection of multiple hard drives. I configured four 1TB drives in ZFS for reliable, fault-tolerant storage with advanced data protection features, running on the lightweight Raspberry Pi OS Lite to maximize available resources for storage operations.\n\nFor the software stack, I deployed OpenMediaVault for comprehensive storage management, secured with proper SSL certificates for encrypted remote access. I extended functionality through several key plugins including OpenMediaVault Compose for Docker container management and OpenMediaVault Kubernetes (K3s), providing a single-node Kubernetes environment with pre-installed Traefik, Cert-Manager, and Kubernetes Dashboard. I implemented static IP addressing with appropriate port forwarding to enable secure accessibility while maintaining security, and added Pi-hole for network-level content filtering.\n\nThis system provides multiple professional use cases including secure document management, local backup solutions, media asset management, development environment with Git repository hosting and CI/CD artifact storage, collaborative workspace with team file sharing, edge computing platform, and containerized application hosting running microservices via Docker and Kubernetes.",
     },
     {
-      id: 5,
+      id: 6,
       title: "Brain Tumor MRI Detection",
       description:
         "A Flask-based web application that uses deep learning with transfer learning (MobileNet) to detect brain tumors from MRI scans with high accuracy.",
@@ -77,7 +88,7 @@ export default function Projects() {
         "This project is a Flask-based web application that uses deep learning with transfer learning (MobileNet) to detect brain tumors from MRI scans with over 97% accuracy.\n\nThe application features a user-friendly interface with drag-and-drop functionality for MRI scan uploads, real-time analysis with instant processing and results display, and clear visualization of detection results with confidence scores. It's privacy-focused with all processing done locally on the server and no permanent storage of uploaded images.\n\nThe model development journey involved multiple iterations. Initially, I developed a custom CNN architecture trained from scratch with ~5.6 million trainable parameters and 94.80% accuracy on test data. To improve performance, I implemented a transfer learning approach using MobileNet, which reduced parameters to only 50,177 (100x reduction), improved accuracy to 97.32%, and achieved faster convergence in just 5 epochs.\n\nThe technology stack includes Flask for the backend, TensorFlow/Keras with MobileNet architecture for deep learning, and HTML/CSS/JavaScript for the frontend. The application includes robust error handling for model compatibility issues and is designed with security considerations in mind.",
     },
     {
-      id: 6,
+      id: 7,
       title: "Real-Time Object Detection",
       description:
         "A custom object detection system using TensorFlow Object Detection API and pretrained SSD MobileNet V2 model for real-time detection.",
@@ -148,8 +159,8 @@ export default function Projects() {
           <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
           <div className="h-1 w-20 bg-primary mx-auto"></div>
           <p className="mt-4 text-text-2 max-w-2xl mx-auto">
-            Explore my latest projects showcasing my skills in full-stack development, cloud technologies, and software
-            architecture.
+            Explore my latest projects showcasing my skills in full-stack development, cloud technologies, data science,
+            and software architecture.
           </p>
         </motion.div>
 
@@ -187,13 +198,13 @@ export default function Projects() {
                   </div>
                   <div className="flex items-center p-6 pt-0 justify-between">
                     <button
-                      className="text-primary hover:text-primary-dark hover:bg-primary-50 dark:hover:bg-primary-900/20 bg-transparent px-3 py-2 rounded-md transition-colors"
+                      className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-[#6366f1] border border-transparent rounded-md shadow-sm hover:bg-[#4f46e5] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#6366f1] transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
                       onClick={() => setSelectedProject(project)}
                     >
                       View Details
                     </button>
                     <div className="flex gap-2">
-                      {project.github && project.id !== 4 && (
+                      {project.github && project.id !== 5 && (
                         <a
                           href={project.github}
                           target="_blank"
@@ -241,7 +252,7 @@ export default function Projects() {
         </div>
 
         <motion.div variants={itemVariants} className="text-center mt-12">
-        <a href="https://github.com/smangukia" target="_blank" rel="noopener noreferrer" className="btn inline-flex">
+          <a href="https://github.com/smangukia" target="_blank" rel="noopener noreferrer" className="btn inline-flex">
             View All Projects
           </a>
         </motion.div>
@@ -297,7 +308,7 @@ export default function Projects() {
                 </div>
 
                 <div className="flex gap-4 mt-auto pt-4">
-                  {selectedProject.github && selectedProject.id !== 4 && (
+                  {selectedProject.github && selectedProject.id !== 5 && (
                     <a
                       href={selectedProject.github}
                       target="_blank"

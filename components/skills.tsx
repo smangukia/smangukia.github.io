@@ -46,7 +46,7 @@ export default function Skills() {
       icon: <Database className="h-5 w-5 text-[#6366f1]" />,
       title: "Databases",
       description: "Database systems I'm proficient with",
-      skills: ["Redis", "Firebase", "PostgreSQL", "DynamoDB", "MongoDB", "MySQL"],
+      skills: ["Redis", "Firebase", "PostgreSQL", "DynamoDB", "MongoDB", "MySQL", "VectorDB", "ChromaDB"],
     },
     {
       icon: <Brain className="h-5 w-5 text-[#6366f1]" />,
@@ -63,14 +63,14 @@ export default function Skills() {
         "Neural Networks",
         "Transformers",
         "CNN",
-        "LSTM",
+        "LangChain",
       ],
     },
     {
       icon: <Eye className="h-5 w-5 text-[#6366f1]" />,
-      title: "Computer Vision",
+      title: "Computer Vision & Data Tools",
       description: "Computer vision tools and techniques",
-      skills: ["YOLOv8", "OpenCV", "Transfer Learning","LabelImg"],
+      skills: ["YOLOv8", "TensorFlow Object Detection API", "OpenCV", "Pandas", "NumPy", "Seaborn", "Transfer Learning", "LabelImg", "PowerBI"],
     },
     {
       icon: <Cloud className="h-5 w-5 text-[#6366f1]" />,
@@ -82,7 +82,7 @@ export default function Skills() {
       icon: <Cog className="h-5 w-5 text-[#6366f1]" />,
       title: "APIs & Integrations",
       description: "API development and integration",
-      skills: ["Apache Kafka", "Github OAuth", "RESTful APIs", "GraphQL", "WebAPI"],
+      skills: ["Git", "Apache Kafka", "Github OAuth", "RESTful APIs", "GraphQL", "WebAPI","BeautifulSoup", "Selenium"],
     },
     {
       icon: <Lightbulb className="h-5 w-5 text-[#6366f1]" />,

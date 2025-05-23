@@ -2,14 +2,13 @@
 
 import { useEffect, useRef, useState, useCallback } from "react"
 import { motion } from "framer-motion"
-import { ArrowDown, ArrowRight, Download } from "lucide-react"
+import { ArrowDown, ArrowRight, ExternalLink } from "lucide-react"
 import TypewriterEffect from "./typewriter-effect"
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0)
   const ticking = useRef(false)
 
-  // Optimized scroll handler with requestAnimationFrame
   const handleScroll = useCallback(() => {
     if (!ticking.current) {
       requestAnimationFrame(() => {
@@ -26,20 +25,17 @@ export default function Hero() {
   }, [handleScroll])
 
   const scrollToAbout = useCallback(() => {
-    const aboutSection = document.getElementById("projects")
+    const aboutSection = document.getElementById("about")
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: "smooth" })
     }
   }, [])
 
-  const downloadResume = useCallback(() => {
-    // Create a link element
-    const link = document.createElement("a")
-    link.href = "/resume.pdf"
-    link.download = "samarth-mangukia-resume.pdf"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  const openResume = useCallback(() => {
+
+    const googleDriveUrl = "https://drive.google.com/file/d/1PBq4khXNoZiCXDID2KeBRLDEg9ntYdll/view?usp=sharing"
+
+    window.open(googleDriveUrl, "_blank", "noopener,noreferrer")
   }, [])
 
   return (
@@ -55,12 +51,11 @@ export default function Hero() {
             <h1 className="text-5xl md:text-6xl font-bold mb-4">Samarth Mangukia</h1>
             <div className="h-10 mb-4 flex justify-center">
               <TypewriterEffect
-                texts={["Full-Stack Developer", "Cloud & DevOps Engineer", "Data Scientist", "Master's Student"]}
+                texts={["Full-Stack Developer", "Cloud & DevOps Engineer", "Software Architect", "Master's Student"]}
               />
             </div>
             <p className="hero-text">
-              Master&apos;s student at Dalhousie University specializing in Full-Stack Development, Cloud Technologies, and
-              Data Science
+              Master&apos;s student at Dalhousie University specializing in Full-Stack Development, Cloud Technologies, and Data Science
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -72,14 +67,13 @@ export default function Hero() {
                 className="btn"
                 style={{
                   background: "var(--bg)",
-                  // border: "1px solid var(--primary)",
                   color: "var(--text-1)",
                   boxShadow: "var(--shadow-sm)",
                 }}
-                onClick={downloadResume}
+                onClick={openResume}
               >
-                Download Resume
-                <Download className="h-5 w-5 ml-2" />
+                View Resume
+                <ExternalLink className="h-5 w-5 ml-2" />
               </button>
             </div>
           </motion.div>
