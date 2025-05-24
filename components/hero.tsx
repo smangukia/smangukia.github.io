@@ -25,7 +25,7 @@ export default function Hero() {
   }, [handleScroll])
 
   const scrollToAbout = useCallback(() => {
-    const aboutSection = document.getElementById("about")
+    const aboutSection = document.getElementById("projects")
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: "smooth" })
     }
