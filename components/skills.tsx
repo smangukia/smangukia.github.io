@@ -137,7 +137,7 @@ export default function Skills() {
         <motion.div variants={itemVariants} className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Skills & Expertise</h2>
           <div className="h-1 w-20 bg-[#6366f1] mx-auto"></div>
-          <p className="mt-4 text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="mt-4 text-text-2 max-w-2xl mx-auto">
             A comprehensive overview of my technical skills and professional competencies
           </p>
         </motion.div>
