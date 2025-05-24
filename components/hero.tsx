@@ -25,9 +25,16 @@ export default function Hero() {
   }, [handleScroll])
 
   const scrollToAbout = useCallback(() => {
-    const aboutSection = document.getElementById("projects")
+    const aboutSection = document.getElementById("about")
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: "smooth" })
+    }
+  }, [])
+
+  const scrollToProjects = useCallback(() => {
+    const projectsSection = document.getElementById("projects")
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" })
     }
   }, [])
 
@@ -59,7 +66,7 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn" onClick={scrollToAbout}>
+              <button className="btn" onClick={scrollToProjects}>
                 Discover My Work
                 <ArrowRight className="h-5 w-5" />
               </button>
