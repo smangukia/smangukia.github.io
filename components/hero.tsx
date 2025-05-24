@@ -51,7 +51,7 @@ export default function Hero() {
             <h1 className="text-5xl md:text-6xl font-bold mb-4">Samarth Mangukia</h1>
             <div className="h-10 mb-4 flex justify-center">
               <TypewriterEffect
-                texts={["Full-Stack Developer", "Cloud & DevOps Engineer", "Software Architect", "Master's Student"]}
+                texts={["Full-Stack Developer", "Data Scientist", "Software Developer", "Cloud & DevOps Engineer", "Master's Student"]}
               />
             </div>
             <p className="hero-text">
@@ -86,10 +86,20 @@ export default function Hero() {
         transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
       >
         <button
-          className="inline-flex items-center justify-center rounded-full h-12 w-12 bg-white dark:!bg-gray-800 hover:bg-gray-100 dark:hover:!bg-gray-700 shadow-sm text-primary dark:!text-white"
+          className="inline-flex items-center justify-center rounded-full h-12 w-12 shadow-sm transition-colors"
           onClick={scrollToAbout}
-          style={{ backgroundColor: "var(--bg-light)", color: "var(--primary)" }}
-          data-dark-style="background-color: var(--surface-dark); color: white;"
+          style={{
+            backgroundColor: "var(--surface)",
+            color: "var(--text-1)",
+          }}
+          onMouseEnter={(e) => {
+            const target = e.target as HTMLElement
+            target.style.opacity = "0.8"
+          }}
+          onMouseLeave={(e) => {
+            const target = e.target as HTMLElement
+            target.style.opacity = "1"
+          }}
         >
           <ArrowDown className="h-6 w-6" />
         </button>

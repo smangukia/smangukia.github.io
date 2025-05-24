@@ -45,8 +45,8 @@ export default function Header() {
               <span>Samarth Mangukia</span>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="nav-menu">
+            {/* Desktop Navigation - show on medium screens and up */}
+            <div className="nav-menu hidden md:flex">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -62,7 +62,7 @@ export default function Header() {
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - show only on small screens */}
             <button className="md:hidden text-current p-2" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -70,9 +70,15 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - only show on small screens */}
       {isMobileMenuOpen && (
-        <div className="fixed top-20 left-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-md z-40 py-4 shadow-lg">
+        <div
+          className="fixed top-20 left-0 w-full backdrop-blur-md z-40 py-4 shadow-lg md:hidden"
+          style={{
+            backgroundColor: "var(--surface)",
+            borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+          }}
+        >
           <nav className="container flex flex-col space-y-4">
             {navItems.map((item) => (
               <Link
@@ -82,7 +88,19 @@ export default function Header() {
                   e.preventDefault()
                   scrollToSection(item.href)
                 }}
-                className="nav-link py-2 border-b border-gray-100 dark:border-gray-800"
+                className="py-2 font-medium transition-colors"
+                style={{
+                  color: "var(--text-1)",
+                  borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
+                }}
+                onMouseEnter={(e) => {
+                  const target = e.target as HTMLElement
+                  target.style.color = "var(--primary)"
+                }}
+                onMouseLeave={(e) => {
+                  const target = e.target as HTMLElement
+                  target.style.color = "var(--text-1)"
+                }}
               >
                 {item.name}
               </Link>

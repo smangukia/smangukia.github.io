@@ -24,6 +24,21 @@
   --text-primary-dark: #f8fafc;
   --text-secondary-dark: #94a3b8;
 
+  /* Contact form specific colors */
+  --contact-blue-bg-light: #dbeafe;
+  --contact-blue-border-light: #93c5fd;
+  --contact-blue-text-light: #1e3a8a;
+  --contact-blue-bg-dark: rgba(30, 58, 138, 0.2);
+  --contact-blue-border-dark: rgba(30, 58, 138, 0.8);
+  --contact-blue-text-dark: #93c5fd;
+
+  --contact-amber-bg-light: #fef3c7;
+  --contact-amber-border-light: #fbbf24;
+  --contact-amber-text-light: #92400e;
+  --contact-amber-bg-dark: rgba(180, 83, 9, 0.2);
+  --contact-amber-border-dark: rgba(180, 83, 9, 0.8);
+  --contact-amber-text-dark: #fbbf24;
+
   /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -45,6 +60,12 @@
   --surface: var(--surface-light);
   --text-1: var(--text-primary-light);
   --text-2: var(--text-secondary-light);
+  --contact-blue-bg: var(--contact-blue-bg-light);
+  --contact-blue-border: var(--contact-blue-border-light);
+  --contact-blue-text: var(--contact-blue-text-light);
+  --contact-amber-bg: var(--contact-amber-bg-light);
+  --contact-amber-border: var(--contact-amber-border-light);
+  --contact-amber-text: var(--contact-amber-text-light);
   color-scheme: light;
 }
 
@@ -53,6 +74,12 @@
   --surface: var(--surface-dark);
   --text-1: var(--text-primary-dark);
   --text-2: var(--text-secondary-dark);
+  --contact-blue-bg: var(--contact-blue-bg-dark);
+  --contact-blue-border: var(--contact-blue-border-dark);
+  --contact-blue-text: var(--contact-blue-text-dark);
+  --contact-amber-bg: var(--contact-amber-bg-dark);
+  --contact-amber-border: var(--contact-amber-border-dark);
+  --contact-amber-text: var(--contact-amber-text-dark);
   color-scheme: dark;
 }
 
@@ -215,6 +242,19 @@ body {
   transform: scale(1.1);
 }
 
+/* Contact form notification boxes */
+.contact-blue-box {
+  background-color: var(--contact-blue-bg);
+  border-color: var(--contact-blue-border);
+  color: var(--contact-blue-text);
+}
+
+.contact-amber-box {
+  background-color: var(--contact-amber-bg);
+  border-color: var(--contact-amber-border);
+  color: var(--contact-amber-text);
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -260,6 +300,17 @@ body.modal-open {
   overflow: hidden;
 }
 
+/* Modal backdrop effects */
+body.modal-open .header {
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+body.modal-open .theme-switch {
+  filter: blur(4px);
+  pointer-events: none;
+}
+
 .modal-container {
   position: fixed;
   top: 0;
@@ -278,6 +329,7 @@ body.modal-open {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  z-index: 9999 !important;
 }
 
 .modal-body {
@@ -360,4 +412,15 @@ form button[type="submit"]:active {
 form button[type="submit"]:disabled {
   opacity: 0.7;
   cursor: not-allowed;
+}
+
+/* Ensure modal appears above everything */
+.modal-backdrop {
+  z-index: 9998 !important;
+}
+
+/* Prevent any content from appearing above modal */
+body.modal-open > *:not(.modal-backdrop) {
+  position: relative;
+  z-index: 1;
 }

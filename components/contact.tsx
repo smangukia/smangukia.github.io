@@ -17,9 +17,6 @@ export default function Contact() {
     subject: "",
     message: "",
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(false)
-  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormState({
@@ -28,44 +25,22 @@ export default function Contact() {
     })
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitError(null)
 
-    try {
-      // FormSubmit.co implementation - replace YOUR_EMAIL with your actual email
-      const formData = new FormData()
-      Object.entries(formState).forEach(([key, value]) => {
-        formData.append(key, value)
-      })
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Portfolio Contact: ${formState.subject}`)
+    const body = encodeURIComponent(`Name: ${formState.name}
+Email: ${formState.email}
 
-      const response = await fetch("https://formsubmit.co/smangukia111@gmail.com", {
-        method: "POST",
-        body: formData,
-      })
+Message:
+${formState.message}
 
-      if (!response.ok) {
-        throw new Error("Failed to send message. Please try again later.")
-      }
+---
+Sent from your portfolio website contact form`)
 
-      // Reset form
-      setFormState({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      })
-
-      // Show success message
-      setSubmitSuccess(true)
-      setTimeout(() => setSubmitSuccess(false), 5000)
-    } catch (error) {
-      console.error("Error submitting form:", error)
-      setSubmitError(error instanceof Error ? error.message : "An unexpected error occurred")
-    } finally {
-      setIsSubmitting(false)
-    }
+    const mailtoLink = `mailto:smangukia111@gmail.com?subject=${subject}&body=${body}`
+    window.location.href = mailtoLink
   }
 
   const containerVariants = {
@@ -126,7 +101,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="text-lg font-medium">Phone</h4>
-                      <p className="text-text-2">(782) 899-2252</p>
+                      <p className="text-text-2">(123) 456-7890</p>
                     </div>
                   </div>
 
@@ -226,37 +201,36 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 bg-[#6366f1] hover:bg-[#4f46e5] text-white font-semibold py-3 px-6 rounded-md shadow-sm transition-colors duration-200 disabled:opacity-70"
-                    disabled={isSubmitting}
+                    className="w-full flex items-center justify-center gap-2 bg-[#6366f1] hover:bg-[#4f46e5] text-white font-semibold py-3 px-6 rounded-md shadow-sm transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
                   >
-                    {isSubmitting ? (
-                      <>
-                        <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full mr-2"></span>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="h-5 w-5" />
-                        Send Message
-                      </>
-                    )}
+                    <Send className="h-5 w-5" />
+                    Open Email Client
                   </button>
-
-                  {submitSuccess && (
-                    <div
-                      className="mt-4 p-3 bg-green-100 text-green-800 rounded-md text-center"
-                      style={{ backgroundColor: "#dcfce7", color: "#166534" }}
-                    >
-                      Message sent successfully! I&apos;ll get back to you soon.
-                    </div>
-                  )}
-
-                  {submitError && (
-                    <div className="mt-4 p-3 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-md text-center">
-                      {submitError}
-                    </div>
-                  )}
                 </form>
+
+                <div className="mt-6 space-y-3">
+                  {/* Gray box */}
+                  <div className="p-3 rounded-lg" style={{ backgroundColor: "var(--surface)" }}>
+                    <p className="text-xs text-center" style={{ color: "var(--text-2)" }}>
+                      Or email me directly at{" "}
+                      <a
+                        href="mailto:smangukia111@gmail.com"
+                        className="hover:underline"
+                        style={{ color: "var(--primary)" }}
+                      >
+                        smangukia111@gmail.com
+                      </a>
+                    </p>
+                  </div>
+
+                  {/* Amber box using CSS custom properties */}
+                  <div className="p-3 rounded-lg border contact-amber-box">
+                    <p className="text-xs text-center">
+                      💡 <strong>Tip:</strong> If the email client doesn&apos;t open automatically, please copy the email
+                      address above and compose your message manually.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
