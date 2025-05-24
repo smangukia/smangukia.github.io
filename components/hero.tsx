@@ -58,7 +58,7 @@ export default function Hero() {
             <h1 className="text-5xl md:text-6xl font-bold mb-4">Samarth Mangukia</h1>
             <div className="h-10 mb-4 flex justify-center">
               <TypewriterEffect
-                texts={["Code. Cloud. Data", "Build. Deploy. Scale" , "Full-Stack Magic", "Cloud Power"]}
+                texts={["Transforming Ideas Into Code", "Cloud-Driven Systems" , "Data-Powered Solutions", "Full-Stack Innovation"]}
               />
             </div>
             <p className="hero-text">
