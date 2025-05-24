@@ -101,7 +101,7 @@ Sent from your portfolio website contact form`)
                     </div>
                     <div>
                       <h4 className="text-lg font-medium">Phone</h4>
-                      <p className="text-text-2">(123) 456-7890</p>
+                      <p className="text-text-2">(782) 899-2252</p>
                     </div>
                   </div>
 
