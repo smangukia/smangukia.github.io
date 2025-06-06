@@ -62,7 +62,7 @@ export default function Hero() {
               />
             </div>
             <p className="hero-text">
-              Master&apos;s student at Dalhousie University specializing in Full-Stack Development, Cloud Technologies, and Data Science
+              Master&apos;s student at Dalhousie University specializing in Software Engineering, Cloud Systems, and AI Applications
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
