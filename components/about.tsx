@@ -42,22 +42,15 @@ export default function About() {
         <div className="max-w-3xl mx-auto">
           <motion.div variants={itemVariants}>
             <p className="mb-6">
-              I am a graduate student at Dalhousie University, specializing in Applied Computer Science with a focus on
-              full-stack development, cloud technologies, and AI. My technical toolkit includes React.js, Node.js,
-              Spring Boot, and cloud platforms like AWS and Kubernetes.
+              I am a graduate student at Dalhousie University specializing in Applied Computer Science with a focus on software development, system-level programming, AI applications, and innovative technical solutions. My expertise spans systems programming languages, full-stack development, and cloud technologies.
             </p>
 
             <p className="mb-6">
-              At Invental Pvt Ltd, I developed a comprehensive learning platform implementing the full software
-              development lifecycle. Working in an agile environment, I built features including interactive dashboards,
-              GitHub OAuth integration, and real-time evaluation systems that enhanced user engagement and assessment
-              efficiency.
+              At Invental Pvt Ltd, I developed a comprehensive learning platform implementing the full software development lifecycle. Working in agile environments, I built scalable systems with real-time processing, secure authentication, and performance optimization that enhanced user engagement and system efficiency.
             </p>
 
             <p className="mb-6">
-              I&apos;ve architected production-ready applications using microservices and event-driven design with Kafka and
-              Socket.IO. My work with TensorFlow and Keras has allowed me to implement transfer learning solutions for
-              computer vision problems, combining my software engineering expertise with practical AI applications.
+              I&apos;ve architected diverse applications from embedded systems to real-time processing pipelines and cloud-native microservices. My experience includes Linux system administration, hardware integration, and AI applications using TensorFlow, combining strong software engineering fundamentals with practical problem-solving across multiple domains.
             </p>
           </motion.div>
         </div>
