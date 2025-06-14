@@ -46,7 +46,7 @@ export default function About() {
             </p>
 
             <p className="mb-6">
-              At Invental Pvt Ltd, I developed a comprehensive learning platform implementing the full software development lifecycle. Working in agile environments, I built scalable systems with real-time processing, secure authentication, and performance optimization that enhanced user engagement and system efficiency.
+              At Agevole Innovation, I developed enterprise software solutions and data management systems, working with cross-functional teams to optimize performance and implement automated deployment processes. Previously at Invental Pvt Ltd, I developed a comprehensive learning platform implementing the full software development lifecycle. Working in agile environments, I built scalable systems with real-time processing, secure authentication, and performance optimization that enhanced user engagement and system efficiency.
             </p>
 
             <p className="mb-6">
